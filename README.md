@@ -101,8 +101,8 @@ npm install
 Create `.env`
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key
-SERPER_API_KEY=your_serper_api_key
+GEMINI_API_KEY=gemini_api_key
+SERPER_API_KEY=serper_api_key
 PORT=5000
 ```
 
@@ -137,7 +137,7 @@ npm run dev
 Environment Variable:
 
 ```env
-VITE_API_BASE_URL=https://[your-backend-url.onrender.com](https://factcheck-agent-mern.onrender.com)v
+VITE_API_BASE_URL = https://factcheck-agent-mern.onrender.com
 ```
 
 ---
