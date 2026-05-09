@@ -1,63 +1,104 @@
-# Fact-Check Agent - MERN Assignment
+# Fact-Check Agent
 
-A deployed-ready Fact-Checking Web App for PDF claim verification.
+AI-powered PDF Fact Verification Web Application
 
-## Objective
+## Overview
 
-Marketing content may contain outdated or hallucinated statistics. This app works as a **Truth Layer**:
-- Upload a PDF
-- Extract factual claims such as statistics, dates, financial numbers, and technical facts
-- Verify claims using live web search snippets + Gemini AI
-- Classify claims as:
-  - Verified
-  - Inaccurate
-  - False / No Evidence
+Fact-Check Agent is a web application that detects outdated, false, or hallucinated claims inside PDF documents using AI and live web verification.
 
-## Tech Stack
+Users can upload a PDF document, and the system will:
 
-### Frontend
-- React.js
-- Vite
-- CSS
+* Extract factual claims
+* Search live web evidence
+* Verify claim accuracy
+* Classify results as:
 
-### Backend
-- Node.js
-- Express.js
-- Multer
-- pdf-parse
-- Gemini API
-- Serper API for live web search
+  * Verified
+  * Inaccurate
+  * False
 
-## Folder Structure
+This project was developed for the Product Management Assessment.
 
-```text
+---
+
+# Features
+
+* PDF Upload Interface
+* Automated Claim Extraction
+* AI-Based Fact Verification
+* Live Web Evidence Search
+* Verification Report Dashboard
+* Modern Responsive UI
+* Fallback Verification System
+
+---
+
+# Tech Stack
+
+## Frontend
+
+* React.js
+* Vite
+* CSS
+
+## Backend
+
+* Node.js
+* Express.js
+
+## APIs & AI
+
+* Google Gemini API
+* Serper API
+
+## Other Libraries
+
+* pdf-parse
+* multer
+* axios
+* cors
+* dotenv
+
+---
+
+# Project Structure
+
+```bash
 factcheck-agent-mern/
+│
 ├── client/
 │   ├── src/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── style.css
-│   ├── package.json
-│   └── vite.config.js
+│   ├── public/
+│   └── package.json
+│
 ├── server/
 │   ├── index.js
-│   ├── package.json
-│   └── .env.example
+│   ├── .env
+│   └── package.json
+│
 └── README.md
 ```
 
-## Local Setup
+---
 
-### 1. Backend
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/vishalsaini79/factcheck-agent-mern.git
+```
+
+---
+
+# Backend Setup
 
 ```bash
 cd server
 npm install
-copy .env.example .env
-npm run dev
 ```
 
-Add your keys in `.env`:
+Create `.env`
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
@@ -65,15 +106,15 @@ SERPER_API_KEY=your_serper_api_key
 PORT=5000
 ```
 
-Backend runs at:
+Run backend:
 
-```text
-http://localhost:5000
+```bash
+npm run dev
 ```
 
-### 2. Frontend
+---
 
-Open another terminal:
+# Frontend Setup
 
 ```bash
 cd client
@@ -81,63 +122,65 @@ npm install
 npm run dev
 ```
 
-Frontend runs at:
+---
 
-```text
-http://localhost:5173
-```
+# Deployment
 
-## Deployment
+## Backend Deployment
 
-### Backend on Render
+* Platform: Render
 
-1. Push this project to GitHub.
-2. Go to Render.
-3. New Web Service.
-4. Select GitHub repo.
-5. Root Directory: `server`
-6. Build Command:
+## Frontend Deployment
 
-```bash
-npm install
-```
+* Platform: Render / Vercel
 
-7. Start Command:
-
-```bash
-npm start
-```
-
-8. Add environment variables:
-   - `GEMINI_API_KEY`
-   - `SERPER_API_KEY`
-   - `PORT=5000`
-
-Copy the deployed backend URL, for example:
-
-```text
-https://factcheck-agent-backend.onrender.com
-```
-
-### Frontend on Vercel
-
-1. Go to Vercel.
-2. Import same GitHub repo.
-3. Root Directory: `client`
-4. Add environment variable:
+Environment Variable:
 
 ```env
-VITE_API_BASE_URL=https://your-render-backend-url.onrender.com
+VITE_API_BASE_URL=https://[your-backend-url.onrender.com](https://factcheck-agent-mern.onrender.com)v
 ```
 
-5. Deploy.
+---
 
-## Demo Video Script
+# How It Works
 
-"Hello, this is my Fact-Check Agent web app. The user can upload a PDF containing factual claims. The backend extracts claims from the PDF, searches live web evidence, and uses Gemini AI to classify each claim as Verified, Inaccurate, or False. The final report shows the claim, status, reason, corrected fact, and source."
+1. User uploads a PDF
+2. System extracts text from PDF
+3. AI identifies factual claims
+4. Web search gathers evidence
+5. Claims are verified
+6. Results are displayed in a report table
 
-## Assignment Deliverables
+---
 
-- Deployed App Link: Vercel frontend URL
-- GitHub Repository: This repository
-- Demo Video: 30-second screen recording showing PDF upload and fact-check report
+# Sample Verification Output
+
+| Claim                              | Status     |
+| ---------------------------------- | ---------- |
+| Apple was founded in 1976          | Verified   |
+| ChatGPT launched in 2015           | False      |
+| India population 100 crore in 2025 | Inaccurate |
+
+---
+
+# Future Improvements
+
+* Multi-language verification
+* Better AI reasoning
+* Real-time citation ranking
+* OCR support for scanned PDFs
+* Export verification reports
+
+---
+
+# Author
+
+Vishal Saini
+B.Tech CSE
+JSS Academy of Technical Education, Noida
+
+---
+
+# License
+
+This project is developed for educational and assessment purposes.
